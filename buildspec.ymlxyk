@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Install phase"
+
+  pre_build:
+    commands:
+      - echo "Branch:"
+      - echo $CODEBUILD_WEBHOOK_HEAD_REF
+
+  build:
+    commands:
+      - echo "Build + Test..."
+      - echo "Tests passed"
+
+  post_build:
+    commands:
+      - echo "Conditional logic..."
+      - |
+        if echo "$CODEBUILD_WEBHOOK_HEAD_REF" | grep -q "main"; then
+          echo "MAIN branch → deploy allowed"
+        else
+          echo "NOT main → deploy skipped"
+        fi
+
+artifacts:
+  files:
+    - app.txt
