@@ -1,0 +1,47 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.swp
+
+# Node (если вдруг будешь использовать)
+node_modules/
+npm-debug.log*
+
+# Python (на всякий случай)
+__pycache__/
+*.pyc
+
+# Env files
+.env
+.env.*
+
+# AWS
+.aws/
+*.pem
+*.key
+
+# SSH
+.ssh/
+
+# Terraform (если будешь использовать)
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+
+# Misc
+*.bak
+*.old
